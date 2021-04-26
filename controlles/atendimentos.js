@@ -3,6 +3,9 @@
  * GET- POST - PUT - PATCH - DELETE
  */
 
+const Atendimento = require('../moldels/atendimentos')
+
+
 // modulo para ser exportado para customExpress
 module.exports = app => {
   app.get('/atendimentos' , (req, responsta)=>{
@@ -11,9 +14,10 @@ module.exports = app => {
   
 
   app.post('/atendimentos' , (req, responsta)=>{
-    console.log('Atendimento vendiado com Sucesso')
-    console.log(req.body)
-
+    const atendimento = req.body
+    
+    Atendimento.adiciona(atendimento)
+    
     responsta.send('✅Servidor rodando com Sucesso na rota POST✅')
   })
 }
