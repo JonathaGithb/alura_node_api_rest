@@ -1,3 +1,4 @@
+// Conexão com banco de dados MYSQL
 class Tabelas {
   init(conexao){
     this.conexao =  conexao;
